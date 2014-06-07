@@ -1,0 +1,32 @@
+#png_top {
+	height:280px;
+	width:1000px;
+}
+
+#video_left {
+	height:420px;
+	width:500px;
+	type:audio/mpeg;
+	autostart:1;
+}
+
+.png_right {
+	height:100px;
+	width:100px;
+	float:left;
+	margin:20px 20px 0 0;
+}
+
+#div_left {
+	float:left;
+	margin:0 30px 0 0;
+}
+
+.news_title {
+	font-weight:900;
+	margin:0 30px 0 0;
+}
+
+.news_date {
+	color:rgb(195, 195, 195);
+}

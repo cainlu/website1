@@ -1,0 +1,21 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+<link href='/css/my_product.css' rel='stylesheet' type='text/css'/>
+{% endblock %}
+
+{% block context %}
+<br>
+<div id='div_left'>
+	<div class='title1'>产品类型</div>
+	{% for tmp_product in products %}
+	<div class='title4'><a href='/main/product/?product_id={{ tmp_product.id }}'>{{ tmp_product.name }}</a></div>
+	{% endfor %}
+</div>
+<span class='product_title'>{{ my_product.name }}</span><br>
+{% if my_product.image %}
+<img src='{{ my_product.image }}' class='png_right'/>
+<br>
+{% endif %}
+<div>{{ my_product.context }}</div>
+{% endblock %}

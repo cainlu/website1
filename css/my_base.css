@@ -1,0 +1,10 @@
+body {
+	margin:30px 100px 0px 100px;
+	font-size:18px;
+}
+
+#title {
+	float:left;
+	font-size:50px;
+	font-weight:900;
+}

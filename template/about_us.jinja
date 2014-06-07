@@ -1,0 +1,25 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+<link href='/css/my_about_us.css' rel='stylesheet' type='text/css'/>
+{% endblock %}
+
+{% block context %}
+<br>
+<div id='div_left'>
+	<div class='title1'>关于我们</div>
+	<div class='title2'><a href='/main/about_us'>公司介绍</a></div>
+	<div class='title2'><a href='/main/speech'>董事长致辞</a></div>
+	<div class='title1'><a href='/main/contact_us'>联系我们</a></div>
+</div>
+<span>
+{% if speech %}
+2013年是不平凡的一年，随着上海自贸区的开启，上海经济乃至中国经济将迎来经济新篇章，在自贸区注册成立的我司，必将迎来新的纪元。希望与同心者致于远同于行。
+{% else %}
+    随着2013年9月18日国务院批准《中国（上海）自由贸易试验区总体方案》，中国（上海）自由贸易区将积极推进服务业扩大开放和外商投资管理体制改革，大力发展总部经济和新型贸易业态。正是这样的契机，让注册于自贸区内的我司有了探索新型贸易业态的机遇。我司将本着致远同心的信念，希望与各位共赢未来。
+<br><br>
+公司的经营范围：<br><br>
+化工原料及产品（除危险化学品，监控化学品，烟花爆竹，民用爆炸物品，易制毒化学物品），机电设备及配料，电子产品及配件，五金交电，环保设备，电线电缆，橡塑制品，装饰材料，包装材料，家具，汽摩配件，轮胎，工艺品，石材，润滑油（除成品油），体育用品，食用农产品，办公用品的销售，商务信息咨询（除经济），计算机软件开发，苗木种植，电子产品加工，机械设备改造，从事货物及技术的进出口业务。
+{% endif %}
+</span>
+{% endblock %}

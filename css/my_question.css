@@ -1,0 +1,68 @@
+#div_left {
+	float:left;
+	margin:0 30px 200px 0;
+}
+
+.title1 {
+	font-size:22px;
+	font-weight:900;
+}
+
+.title2 {
+	font-size:20px;
+	margin:5px 0 5px 0;
+}
+
+.title3 {
+	font-size:16px;
+	margin:5px 0 5px 20px;
+}
+
+.title4 {
+	font-size:16px;
+	margin:5px 0 5px 40px;
+}
+
+.png_right {
+	height:600px;
+	width:500px;
+	float:left;
+	margin:20px 20px 600px 0;
+}
+
+.right_title {
+	font-size:22px;
+	font-weight:900;
+}
+
+.form_textarea {
+	width:280px;
+	height:200px;
+	margin:5px 0 10px 0;
+	border-color:gray;
+}
+
+.form_input {
+	width:280px;
+	height:25px;
+	margin:5px 0 10px 0;
+	border-color:gray;
+}
+
+.form_button {
+	pointer:cursor;
+	background-color:white;
+	width:280px;
+	height:30px;
+	margin:5px 0 10px 0;
+	border-color:gray;
+}
+
+.right_div {
+	margin:10px 0 5px 0;
+}
+
+.right_div2 {
+	color:gray;
+	margin:10px 0 5px 0;
+}

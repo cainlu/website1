@@ -1,0 +1,51 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+<link href='/css/my_question.css' rel='stylesheet' type='text/css'/>
+{% endblock %}
+
+{% block context %}
+<br>
+<div id='div_left'>
+	<div class='title1'>常见问题解答</div>
+	<div class='title2'><a href='/main/answer'>工业润滑</a></div>
+	<div class='title2'><a href='/main/answer'>包装用品</a></div>
+	<div class='title2'><a href='/main/answer'>劳防用品</a></div>
+</div>
+<img src='/image/product1.png' class='png_right'/>
+<div>
+	<span class='right_title'><a href='/main/answer'>留言版</a></span>
+	<span class='right_title'><a href='/main/question'>我要留言</a></span>
+</div>
+{% if type== '1' %}
+<form method='post' action='/main/message' id='message_form'>
+    {% csrf_token %}
+    <hr>
+    <textarea name='content' class='form_textarea' placeholder='你的留言...'></textarea>
+    <input type='text' name='person_name' class='form_input' placeholder='联系人名称'/>
+    <input type='text' name='company_name' class='form_input' placeholder='公司名称'/>
+    <input type='text' name='phone' class='form_input' placeholder='联系电话'/>
+    <input type='text' name='email' class='form_input' placeholder='联系邮箱'/>
+    <input type='submit' value='确认提交' class='form_button'/><br>
+</form>
+{% elif type == '2' %}
+{% for comment in comments %}
+<div class='right_div'>{{ comment.author }}&nbsp;&nbsp;&nbsp;&nbsp;{{ comment.time }}</div>
+<div class='right_div'>{{ comment.context }}</div>
+<div class='right_div2'><a href='/main/answer/?comment_id={{ comment.id }}'>回复</a></div>
+	{% if comment.id == comment_id %}
+	<form method='post' action='/main/reply' id='message_form2'>
+	    {% csrf_token %}
+	    <textarea name='content' class='form_textarea' placeholder='你的回复...'></textarea>
+	    <input type='hidden' name='object' value='{{ comment_id }}'/>
+	    <input type='submit' value='确认提交' class='form_button'/><br>
+	</form>
+	{% endif %}
+<hr>
+	{% for reply in comment.get_replys() %}
+		<div class='right_div'>&nbsp;&nbsp;&nbsp;&nbsp;答：{{ reply.context }}</div>
+		<hr>
+	{% endfor %}
+{% endfor %}
+{% endif %}
+{% endblock %}

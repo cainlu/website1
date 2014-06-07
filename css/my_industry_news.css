@@ -1,0 +1,29 @@
+#div_left {
+	float:left;
+	margin:0 30px 1600px 0;
+}
+
+.title1 {
+	font-size:25px;
+	font-weight:900;
+}
+
+.title2 {
+	margin:5px 0 5px 0;
+}
+
+.png_right {
+	height:100px;
+	width:100px;
+	float:left;
+	margin:20px 20px 0 0;
+}
+
+.news_title {
+	font-weight:900;
+	margin:0 30px 0 0;
+}
+
+.news_date {
+	color:rgb(195, 195, 195);
+}

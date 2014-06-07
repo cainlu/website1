@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+        <link href='/css/my_base.css' rel='stylesheet' type='text/css'/>
+        <script type='text/javascript' src='/js/jquery-1.7.2.min.js'></script>
+        <script type='text/javascript' src='/js/jquery.noty.js'></script>
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+    	<div id='title'>三烁&nbsp;&nbsp;|&nbsp;</div>
+    	<a href='/'><img src='/image/back_to_index.png'/></a>
+    	<a style='margin:0 0 0 600px;' href='/'>中文</a>|<a href='/'>English</a>
+    	<br/><br/>
+    	<div>
+    		<a href='/main/about_us'>关于我们</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    		<a href='/main/product'>产品与服务</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    		<a href='/main/industry_news'>行业动态</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    		<a href='/main/answer'>常见问题</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    		<a href='/main/question'>技术支持</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    		<a href='/main/contact_us'>联系我们</a>
+    		<form method='post' action='/main/search/' style='float:right;'>
+		        {% csrf_token %}
+		        <input type='text' name='search_word' style='width:180px;'/>
+		        <input type='button' value='go'/><br>
+		    </form>
+    	</div>
+    	<br/>
+		{% block context %}
+        {% endblock %}
+    </body>
+</html>

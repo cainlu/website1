@@ -1,0 +1,23 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+<link href='/css/my_industry_news.css' rel='stylesheet' type='text/css'/>
+{% endblock %}
+
+{% block context %}
+<br>
+<div id='div_left'>
+	<div class='title1'>行业动态</div>
+	<div class='title2'><a href='/main/industry_news'>最新要闻</a></div>
+	<div class='title2'><a href='/main/industry_news/?news_type=1'>公司新闻</a></div>
+	<div class='title2'><a href='/main/industry_news/?news_type=2'>行业新闻</a></div>
+</div>
+{% for tmp_news in my_news%}
+<img src='{{tmp_news.image}}' class='png_right'/>
+<span class='news_title'>{{tmp_news.title}}</span>
+<span class='news_date'>{{tmp_news.time}}</span>
+<br><br>
+<span class='news_simple_context'>{{tmp_news.context}}</span>
+<br><br><br><br><br><br>
+{% endfor %}
+{% endblock %}

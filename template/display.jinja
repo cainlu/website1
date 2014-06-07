@@ -1,0 +1,33 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+<link href='/css/my_display.css' rel='stylesheet' type='text/css'/>
+{% endblock %}
+
+{% block context %}
+<img src='/image/index_top.png' id='png_top'/>
+<br><br><br>
+<div id='div_left'>
+	<div><a href='/main/product'>铁霸润滑产品系列介绍>></a></div>
+	<br>
+	<embed src='/video/index.wmv' id='video_left'>
+</div>
+<div>
+	<div>
+		<a href='/main/industry_news'>最新要闻</a>
+		<a href='/main/industry_news/?news_type=1'>行业新闻</a>
+		<a href='/main/industry_news/?news_type=2'>公司新闻</a>
+	</div>
+	<br><br>
+	{% for tmp_news in my_news%}
+	<img src='{{tmp_news.image}}' class='png_right'/>
+	<span class='news_title'>{{tmp_news.title}}</span>
+	<span class='news_date'>{{tmp_news.time}}</span>
+	<br><br>
+	<span class='news_simple_context'>{{tmp_news.context}}</span>
+	<br><br><br><br>
+	{% endfor %}
+	<a href='/main/industry_news'>点击查看更多新闻</a>
+</div>
+<br><br><br><br>
+{% endblock %}
