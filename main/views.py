@@ -70,4 +70,12 @@ def reply(request):
                                      phone = '',
                                      email = '',
                                      )
-    return HttpResponseRedirect('/main/answer')
+    return HttpResponseRedirect('/main/answer/?')
+
+def search(request):
+    search_word = request.POST.get('search_word', '')
+    my_product = Product.objects.filter(name__contains=search_word)
+    if my_product:
+        return HttpResponseRedirect('/main/product/?product_id=%s' % my_product[0].id)
+    else:
+        return HttpResponseRedirect('/main/product')
